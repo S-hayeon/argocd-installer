@@ -200,8 +200,8 @@ spec:
           EOT
       containers:
       - name: gitlab
-        securityContext:
-          privileged: true
+        # securityContext:
+        #   privileged: true
         {{- if .Values.global.registry.is_offline }}
         image: "{{ .Values.global.private_registry }}/{{ .Values.image.gitlab.repo }}:{{ .Values.image.gitlab.tag }}"
         {{- else }}
